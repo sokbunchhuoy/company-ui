@@ -4,7 +4,11 @@ import { AppLayoutComponent } from './layout/app.layout.component';
 
 const routes: Routes = [
     {
-        path: '', component: AppLayoutComponent,
+        path: '',
+        loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+    },
+    {
+        path: 'page', component: AppLayoutComponent,
         children: [
             { path: '', loadChildren: () => import('./demo/components/dashboards/dashboards.module').then(m => m.DashboardsModule) },
             { path: 'uikit', data: { breadcrumb: 'UI Kit' }, loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
@@ -14,7 +18,9 @@ const routes: Routes = [
             { path: 'documentation', data: { breadcrumb: 'Documentation' }, loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) },
             { path: 'blocks', data: { breadcrumb: 'Prime Blocks' }, loadChildren: () => import('./demo/components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
             { path: 'ecommerce', data: { breadcrumb: 'E-Commerce' }, loadChildren: () => import('./demo/components/ecommerce/ecommerce.module').then(m => m.EcommerceModule) },
-            { path: 'apps', data: { breadcrumb: 'Apps' }, loadChildren: () => import('./demo/components/apps/apps.module').then(m => m.AppsModule) }
+            { path: 'apps', data: { breadcrumb: 'Apps' }, loadChildren: () => import('./demo/components/apps/apps.module').then(m => m.AppsModule) },
+            { path: 'company', data: { breadcrumb: 'Company' }, loadChildren: () => import('./demo/components/company/company.module').then(m => m.CompanyModule) },
+
         ]
     },
     { path: 'auth', data: { breadcrumb: 'Auth' }, loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },

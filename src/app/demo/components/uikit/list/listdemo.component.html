@@ -9,7 +9,7 @@
 						<span class="p-input-icon-left">
                             <i class="pi pi-search"></i>
                             <input type="search" pInputText placeholder="Search by Name" (input)="onFilter(dv, $event)">
-                        </span>	
+                        </span>
 						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
 					</div>
 				</ng-template>
@@ -44,7 +44,7 @@
 									<i class="pi pi-tag mr-2"></i>
 									<span class="font-semibold">{{product.category}}</span>
 								</div>
-								<span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+								<span >{{product.inventoryStatus}}</span>
 							</div>
 							<div class="flex flex-column align-items-center text-center mb-3">
 								<img [src]="'assets/demo/images/product/' + product.image" [alt]="product.name" class="w-9 shadow-2 my-3 mx-0"/>

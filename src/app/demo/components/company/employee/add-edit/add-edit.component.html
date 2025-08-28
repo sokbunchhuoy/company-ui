@@ -1,0 +1,115 @@
+<div class="content">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid app-header-add-edit grid-nogutter align-items-center pb-3">
+            <div class="col-4">
+                <h5 class="component-header mb-0">{{ pageName }}</h5>
+            </div>
+            <div class="col-8">
+                <div class="grid grid-nogutter justify-content-end">
+                    <div class="col-fixed">
+                        <p-button type="button" label="Back" icon="pi pi-arrow-left"
+                                  (onClick)="goBack()"
+                                  styleClass="p-button-secondary mr-1" [loading]="isLoading"></p-button>
+                    </div>
+                    <div class="col-fixed">
+                        <p-button type="submit" label="Save" icon="pi pi-save" [disabled]="form.invalid || isLoading" [loading]="isLoading"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="grid p-fluid">
+                <div class="col-12 md:col-5">
+                    @if (hide){
+                        <input id="id" pInputText placeholder="--- Id ---" formControlName="id" autocomplete="off">
+                    }
+                    <div class="field">
+                        <label for="name">Name <span class="required"></span></label>
+                        <input id="name" pInputText placeholder="--- Name ---" formControlName="name" autocomplete="off">
+                        @if (form.controls['name'].hasError('required') && form.controls['name'].touched) {
+                            <small class="p-error"> Field required </small>
+                        }
+                    </div>
+                    <div class="field">
+                        <label for="date">Date</label>
+                        <p-calendar id="date"
+                                    placeholder="yyyy-mm-dd"
+                                    formControlName="hireDate"
+                                    dateFormat="yy-mm-dd"
+                                    [showIcon]="true">
+                        </p-calendar>
+                        @if (form.controls['hireDate'].hasError('required') && form.controls['hireDate'].touched) {
+                            <small class="p-error"> Field required </small>
+                        }
+                    </div>
+                    <div class="field">
+                        <label for="position">Position <span class="required"></span></label>
+                        <p-dropdown id="position" [options]="objPosition" formControlName="position" optionLabel="name"
+                                     placeholder="-- Select osition --">
+                        </p-dropdown>
+                        @if (form.controls['position'].hasError('required') && form.controls['position'].touched) {
+                            <small class="p-error"> Field required </small>
+                        }
+                    </div>
+                    <div class="field">
+                        <label for="department">Department <span class="required"></span></label>
+                        <input id="department" pInputText placeholder="--- Department ---" formControlName="department" autocomplete="off">
+                        @if (form.controls['department'].hasError('required') && form.controls['department'].touched) {
+                            <small class="p-error"> Field required </small>
+                        }
+                    </div>
+                    <div class="field">
+                        <label>Online Status </label>
+                        <div style="width: 30%">
+                            <p-selectButton
+                                [unselectable]="true"
+                                formControlName="onlineStatus"
+                                optionValue="value"
+                                [options]="onlineStatusOptions">
+                            </p-selectButton>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="salary">salary <span class="required"></span></label>
+                        <p-inputNumber id="salary" placeholder="--- salary ---" formControlName="salary"
+                                       autocomplete="off" mode="decimal" [maxFractionDigits]="5" [minFractionDigits]="2" [useGrouping]="false">
+                        </p-inputNumber>
+                        @if (form.controls['salary'].hasError('required') && form.controls['salary'].touched) {
+                            <small class="p-error"> Field required </small>
+                        }
+                    </div>
+                    <div class="field">
+                        <label for="note">Note </label>
+                        <textarea id="note"
+                                  cols="30"
+                                  rows="3"
+                                  pInputTextarea
+                                  formControlName="description">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-12 md:col-5">
+                    <!-- IMAGE PICKER + PREVIEW -->
+                    <div class="field">
+                        <label for="photo">Photo</label>
+                        <input id="photo" type="file" accept="image/*" (change)="onFilePicked($event)">
+                        @if (photoPreviewUrl) {
+                            <div class="mt-2">
+                                <img [src]="photoPreviewUrl" alt="preview" style="max-width: 160px; border-radius: 8px;">
+                                <p-button type="button" icon="pi pi-times" label="Remove" class="p-button-text"
+                                          (onClick)="clearPhoto()"></p-button>
+                            </div>
+                        }
+                        @if (fileError) {
+                            <small class="p-error">{{ fileError }}</small>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<p-toast position="top-right" key="tst"></p-toast>

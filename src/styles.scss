@@ -17,3 +17,40 @@ $gutter: 1rem; //for primeflex grid system
 @import "assets/demo/styles/flags/flags.css";
 @import "assets/demo/styles/badges.scss";
 @import "assets/demo/styles/code.scss";
+
+.avatars{
+
+    border-radius: 20px;   /* rounded corners by default */
+}
+
+/* make it perfectly round (avatar) */
+.avatars-circle{
+    border-radius: 20%;
+}/**
+Required field
+*/
+.required {
+    color: #cc0000;
+
+    &:after {
+        content: "*";
+    }
+}
+
+.col-no {
+    width: 55px;
+    text-align: center;
+}
+
+.col-action, .col-action-sm {
+    width: 180px;
+    text-align: center;
+
+    a {
+        color: var(--primary-color);
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

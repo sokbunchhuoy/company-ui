@@ -22,7 +22,7 @@ export class ProfileListComponent implements OnInit {
     }
 
     navigateToCreateUser(){
-        this.router.navigate(['profile/create'])
+        this.router.navigate(['/page/profile/create'])
     }
 
 }
