@@ -54,3 +54,77 @@ Required field
         }
     }
 }
+
+/* Container and overall background */
+.calculator-container {
+    width: 360px; /* Increased width for better proportions */
+    margin: auto;
+    background: black; /* Main background color */
+    padding: 0; /* Remove padding */
+}
+
+/* Screen */
+.calculator-screen {
+    background: black;
+    color: white; /* White text */
+    padding: 30px 20px 10px 20px; /* More padding, especially at the top */
+    text-align: right;
+    font-size: 60px; /* Much larger font size */
+    font-weight: 300;
+    overflow-x: auto; /* Allow horizontal scrolling for large numbers */
+    border-radius: 0; /* No border radius on the screen itself */
+    border: none;
+}
+
+/* Button Grid */
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px; /* Increased gap between buttons */
+    padding: 20px 10px; /* Padding for the button area */
+}
+
+/* Base button styles */
+.btn {
+    width: 65px; /* Fixed width to ensure circular shape */
+    height: 65px; /* Fixed height to ensure circular shape */
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 50%; /* Make them perfectly circular */
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 1. Number Buttons (Dark Gray) */
+.number {
+    background: #333333;
+    color: white;
+}
+.number:active {
+    background: #555555;
+}
+
+/* 2. Top-Row/Function Buttons (Lighter Gray) */
+.func {
+    background: #a6a6a6;
+    color: black;
+}
+.func:active {
+    background: #cccccc;
+}
+
+/* 3. Right-Column/Operator Buttons (Orange) */
+.operator,
+.equal {
+    background: #ff9f0a;
+    color: white;
+}
+.operator:active,
+.equal:active {
+    background: #ffc966;
+}

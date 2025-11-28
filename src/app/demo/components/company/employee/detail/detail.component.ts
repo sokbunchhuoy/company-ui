@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Location} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-detail',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class DetailComponent {
 
+    constructor(private location: Location, private router: Router) {
+    }
+
+
+    goBack() {
+        this.location.back();
+    }
 }

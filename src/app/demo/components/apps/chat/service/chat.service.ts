@@ -14,7 +14,7 @@ export class ChatService {
         "status": "active",
         "messages": [
             {
-                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "text": "BUNCHHUOY, consectetur adipiscing elit",
                 "ownerId": 1,
                 "createdAt": 1652646338240
             },

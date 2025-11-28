@@ -51,6 +51,7 @@ export class AddEditComponent implements OnInit {
     }
 
     ngOnInit() {
+        // this.op.toggle(event);
         this.initForm();
 
         this.route.paramMap
@@ -71,7 +72,6 @@ export class AddEditComponent implements OnInit {
                         position: emp.position,
                         department: emp.department,
                         salary: emp.salary,
-                        hireDate: emp.hireDate ? new Date(emp.hireDate) : null,
                         description: emp.description ?? null,
                         onlineStatus: emp.onlineStatus ?? true
                     });
@@ -102,7 +102,6 @@ export class AddEditComponent implements OnInit {
             position: [null, Validators.required],
             department: [null, Validators.required],
             salary: [null, [Validators.required, Validators.min(0)]],
-            hireDate: [null, Validators.required], // Date object from p-calendar
             description: [null],
             onlineStatus: [true]
         });
@@ -215,7 +214,6 @@ export class AddEditComponent implements OnInit {
             position: v.position!,
             department: v.department!,
             salary: Number(v.salary),
-            hireDate: this.toYMD(new Date(v.hireDate as Date)), // "YYYY-MM-DD"
             description: v.description ?? null,
             onlineStatus: !!v.onlineStatus,
             photoBase64: this.photoRawBase64 ?? undefined,

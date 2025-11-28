@@ -1,0 +1,40 @@
+<div class="content">
+    <div class="grid app-header-add-edit grid-nogutter align-items-center pb-3">
+        <div class="col-4">
+            <h5 class="component-header mb-0">{{ pageName }}</h5>
+        </div>
+    </div>
+
+    <div class="card calculator-container p-4">
+        <div class="calculator-screen mb-3 gray">
+            {{ display || '0' }}
+        </div>
+
+        <div class="calculator-buttons">
+            <button class="btn func top-row" (click)="deleteLast()">&#215;</button>
+            <button class="btn func top-row" (click)="clear()">AC</button>
+            <button class="btn func top-row" (click)="calculatePercentage()">%</button>
+            <button class="btn operator right-col" (click)="press('/')">&#247;</button>
+
+            <button class="btn number" (click)="press('7')">7</button>
+            <button class="btn number" (click)="press('8')">8</button>
+            <button class="btn number" (click)="press('9')">9</button>
+            <button class="btn operator right-col" (click)="press('*')">&#215;</button>
+
+            <button class="btn number" (click)="press('4')">4</button>
+            <button class="btn number" (click)="press('5')">5</button>
+            <button class="btn number" (click)="press('6')">6</button>
+            <button class="btn operator right-col" (click)="press('-')">-</button>
+
+            <button class="btn number" (click)="press('1')">1</button>
+            <button class="btn number" (click)="press('2')">2</button>
+            <button class="btn number" (click)="press('3')">3</button>
+            <button class="btn operator right-col" (click)="press('+')">+</button>
+
+            <button class="btn func" (click)="toggleSign()">+/-</button>
+            <button class="btn number" (click)="press('0')">0</button>
+            <button class="btn number" (click)="press('.')">.</button>
+            <button class="btn equal right-col" (click)="calculate()">=</button>
+        </div>
+    </div>
+</div>

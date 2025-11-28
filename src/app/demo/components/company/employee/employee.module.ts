@@ -5,7 +5,6 @@ import {EmployeeRoutingModule} from './employee-routing.module';
 import {ListComponent} from "./list/list.component";
 import {ToastModule} from "primeng/toast";
 import {ButtonModule} from "primeng/button";
-import {ReactiveFormsModule} from "@angular/forms";
 import {InputTextModule} from "primeng/inputtext";
 import {LoadingModule} from "../../../../share/component/module/loading/loading.module";
 import {TableModule} from "primeng/table";
@@ -14,7 +13,7 @@ import {AddEditComponent} from "./add-edit/add-edit.component";
 import {SelectButtonModule} from "primeng/selectbutton";
 import {DropdownModule} from "primeng/dropdown";
 import {InputNumberModule} from "primeng/inputnumber";
-import {InputTextarea, InputTextareaModule} from "primeng/inputtextarea";
+import {InputTextareaModule} from "primeng/inputtextarea";
 import {CalendarModule} from "primeng/calendar";
 import {RippleModule} from "primeng/ripple";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
@@ -25,10 +24,16 @@ import {AvatarModule} from "primeng/avatar";
 import {ChartModule} from "primeng/chart";
 import {PickListModule} from "primeng/picklist";
 import {DetailComponent} from "./detail/detail.component";
+import {PanelModule} from "primeng/panel";
+import {QrScanComponent} from "./qr-scan/qr-scan.component";
 
+import {DialogModule} from "primeng/dialog";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import {OverlayPanelModule} from "primeng/overlaypanel";
 
 @NgModule({
-    declarations: [ListComponent, AddEditComponent, IndexComponent, DetailComponent],
+    declarations: [ListComponent, AddEditComponent, IndexComponent, DetailComponent, QrScanComponent],
     imports: [
         CommonModule,
         EmployeeRoutingModule,
@@ -45,6 +50,7 @@ import {DetailComponent} from "./detail/detail.component";
                 {path: 'edit/:id', component: AddEditComponent, data: {breadcrumb: 'Edit'}},
                 {path: 'crush', component: IndexComponent, data: {breadcrumb: 'Crush'}},
                 {path: 'detail', component: DetailComponent, data: {breadcrumb: 'Detail'}},
+                {path: 'qr', component: QrScanComponent, data: {breadcrumb: 'Detail'}},
             ]
         ),
         SelectButtonModule,
@@ -57,7 +63,14 @@ import {DetailComponent} from "./detail/detail.component";
         ProgressBarModule,
         AvatarModule,
         ChartModule,
-        PickListModule
+        PickListModule,
+        PanelModule,
+        ZXingScannerModule,
+        DialogModule,
+        DropdownModule,
+        FormsModule,
+        OverlayPanelModule,
+
     ],
     providers: [ConfirmationService, MessageService]
 })

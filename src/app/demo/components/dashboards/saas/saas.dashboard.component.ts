@@ -21,7 +21,7 @@ export class SaaSDashboardComponent implements OnInit, OnDestroy {
 
     subscription: Subscription;
 
-    constructor(public layoutService: LayoutService) { 
+    constructor(public layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$
         .pipe(debounceTime(25))
         .subscribe((config) => {
@@ -195,7 +195,7 @@ export class SaaSDashboardComponent implements OnInit, OnDestroy {
         if (this.selectedOverviewWeek.code === '1') {
             this.overviewChartData.datasets[0].data = dataSet2[parseInt('0')];
             this.overviewChartData.datasets[1].data = dataSet2[parseInt('1')];
-        } 
+        }
         else {
             this.overviewChartData.datasets[0].data = dataSet1[parseInt('0')];
             this.overviewChartData.datasets[1].data = dataSet1[parseInt('1')];

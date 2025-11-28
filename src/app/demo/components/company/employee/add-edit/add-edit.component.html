@@ -32,18 +32,6 @@
                         }
                     </div>
                     <div class="field">
-                        <label for="date">Date</label>
-                        <p-calendar id="date"
-                                    placeholder="yyyy-mm-dd"
-                                    formControlName="hireDate"
-                                    dateFormat="yy-mm-dd"
-                                    [showIcon]="true">
-                        </p-calendar>
-                        @if (form.controls['hireDate'].hasError('required') && form.controls['hireDate'].touched) {
-                            <small class="p-error"> Field required </small>
-                        }
-                    </div>
-                    <div class="field">
                         <label for="position">Position <span class="required"></span></label>
                         <p-dropdown id="position" [options]="objPosition" formControlName="position" optionLabel="name"
                                      placeholder="-- Select osition --">

@@ -51,7 +51,7 @@
 			</p-autoComplete>
 
 			<h5>Calendar</h5>
-			<p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+			<p-calendar [showIcon]="true" inputId="icon" appendTo="body"></p-calendar>
 
 			<h5>InputNumber</h5>
 			<p-inputNumber mode="decimal" [showButtons]="true" [min]="0" [max]="100">
@@ -164,7 +164,7 @@
 			<p-selectButton [options]="paymentOptions" [(ngModel)]="valSelect2" [multiple]="true" optionLabel="name"></p-selectButton>
 		</div>
 	</div>
-	
+
 	<div class="col-12">
 		<div class="card">
 			<h5>InputGroup</h5>

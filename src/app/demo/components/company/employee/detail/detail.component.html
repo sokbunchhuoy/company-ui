@@ -1,8 +1,32 @@
 <div class="content">
-    <div class="col 2">
-        <div class="col-1 md:col-1">
-            <h2>Hello world my name is bunchhuoy</h2>
-            <button>Create</button>
+    <div class="grid app-header-add-edit grid-nogutter align-items-center pb-3">
+        <div class="col-4">
+            <h5 class="component-header mb-0">Crush</h5>
+        </div>
+        <div class="col-8">
+            <div class="grid grid-nogutter justify-content-end">
+                <div class="col-fixed">
+                    <p-button type="button" label="Back" icon="pi pi-arrow-left" (onClick)="goBack()"
+                              styleClass="p-button-secondary mr-1"></p-button>
+                </div>
+                <div class="col-fixed">
+                    <p-button type="submit" label="Save" icon="pi pi-save"></p-button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="grid p-fluid">
+            <h5>Hello Babe</h5>
+            <p-panel header="Hunnii" [toggleable]="true" class="line-height-3 m-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p-panel>
         </div>
     </div>
 </div>

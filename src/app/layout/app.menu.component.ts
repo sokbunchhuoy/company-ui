@@ -28,6 +28,12 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
+                label: 'Main Calculator', icon: 'pi pi-home',
+                items: [
+                    { label: 'Calculator', icon: 'pi pi-desktop', routerLink: ['/page/post-calculator/p-calculator'] },
+                ]
+            },
+            {
                 label: 'UI Kit', icon: 'pi pi-star', routerLink: ['/uikit'],
                 items: [
                     { label: 'Form Layout', icon: 'pi pi-id-card', routerLink: ['/page/uikit/formlayout'] },

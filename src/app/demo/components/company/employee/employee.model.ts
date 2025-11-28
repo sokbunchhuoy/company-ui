@@ -4,7 +4,6 @@ export interface Employee {
     position: string;
     department: string;
     salary: number;
-    hireDate: string; // "YYYY-MM-DD"
     description?: string | null;
     onlineStatus: boolean;
     photoBase64?: string;     // raw base64
